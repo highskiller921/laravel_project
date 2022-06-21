@@ -5,7 +5,7 @@
      <div class="row mt-3">
         <div class="col-12">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-success" type="button">New Post</button>
+                <a href="{{url('/')}}/create" class="btn btn-success" type="button">New Post</a>
             </div>
         </div>
      </div>
