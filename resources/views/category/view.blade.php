@@ -4,7 +4,7 @@
      <div class="container">
         <div class="row my-4">
             <div class="col-12">
-                <input type="text" class="form-control" value="Movie">
+                <input type="text" class="form-control" value="{{$category->title}}">
             </div>
         </div>
         <div class="row my-4">

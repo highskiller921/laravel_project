@@ -13,8 +13,24 @@
             </div>
         </div>
         <div class="row my-3">
+          <div class="col-12">
+            <label>Category</label>
+            <select class="form-select">
+                <option value="movie">movie</option>
+                <option value="movie">music</option>
+            </select>
+          </div>
+        </div>
+        <div class="row my-3">
             <div class="col-12">
                 <div id="editor"></div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-12">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                    <button class="btn btn-success" type="button">Submit</button>
+                </div>
             </div>
         </div>
      </div>
