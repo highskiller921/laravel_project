@@ -30,4 +30,11 @@ class CategoryController extends Controller
 
         return redirect('/category');
     }
+    
+    public function delete($id)
+    {
+        $category=Category::find($id);
+        $category->delete();
+        return redirect('/category');
+    }
 }
