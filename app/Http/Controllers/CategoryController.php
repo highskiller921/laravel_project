@@ -37,4 +37,13 @@ class CategoryController extends Controller
         $category->delete();
         return redirect('/category');
     }
+
+    public function update(Request $request, $id)
+    {
+        $category=Category::find($id);
+        $category->title=$request->title;
+        $category->save();
+
+        return redirect('/category');
+    }
 }
