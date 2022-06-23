@@ -31,11 +31,12 @@
         <div class="row my-3">
             <div class="col-12">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-                    <button class="btn btn-success" type="button" id="submit">Submit</button>
+                    <button class="btn btn-success" type="button" id="submit">Update</button>
                 </div>
             </div>
         </div>
      </div>
+     <input type="hidden" id="post_id" value="{{$post->id}}">
 @endsection
 
 @section('before_body_end_tag')
@@ -47,15 +48,17 @@
         $( document ).ready(function() {
           $('#submit').click(function(){
             
+            var post_id=$("#post_id").val();
             var title=$("#title").val();
             var category_id=$("#category_id").val();
             var content = $('.ck-content').html();
             
             $.ajax({
                 type:"POST",
-                url:"/store",
+                url:"/update",
                 data:{
                     _token:CSRF_TOKEN,
+                    post_id:post_id,
                     title:title,
                     category_id:category_id,
                     content:content,
@@ -63,7 +66,7 @@
                 dataType:'JSON',
                 success:function success(data){
                     console.log(data.result);
-                    window.location.href='/';
+                    window.location.href='/'+post_id+'/view';
                 },
                 error: function (response){
                     console.log(response);
