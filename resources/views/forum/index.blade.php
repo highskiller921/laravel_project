@@ -2,7 +2,8 @@
 
 @section('content')
    <div class="container">
-     <div class="row mt-3">
+    @auth 
+    <div class="row mt-3">
         <div class="col-12">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="{{url('/')}}/create" class="btn btn-success" type="button">New Post</a>
@@ -10,6 +11,7 @@
         </div>
      </div>
      <hr>
+     @endauth
 
      @php
         $categories=App\Models\Category::orderby('title','asc')
