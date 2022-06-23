@@ -9,13 +9,28 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{url('/')}}/category">Category</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{url('/')}}/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{url('/')}}/register">Register</a>
-            </li>
-        </ul>
+            
+            @guest
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('/')}}/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{url('/')}}/register">Register</a>
+              </li>
+            @endguest
+            @auth
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <li class="nav-item">
+                  <a class="nav-link active" href="route('logout')"
+                          onclick="event.preventDefault();
+                          this.closest('form').submit();">
+                      Wecome! {{auth()->user()->name}} | LogOut
+                  </a>
+              </li>
+              </form>  
+            @endauth
+          </ul>
         </div>
     </div>
    </nav>
