@@ -28,7 +28,7 @@
                @foreach($posts as $post)
 
                 <li class="list-group-item list-group-item-action">
-                  <a href="{{url('/')}}/1/view" style="text-decoration: none" class="text-dark">{{$post->title}}</a>
+                  <a href="{{url('/')}}/{{$post->id}}/view" style="text-decoration: none" class="text-dark">{{$post->title}}</a>
                     <span class="badge bg-info text-dark"><i class="fa-solid fa-comment-dots"></i></i> 4</span>
                     <span class="badge bg-danger"><i class="fa-solid fa-heart"></i> 3</span>
                     <br>
