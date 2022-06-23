@@ -80,4 +80,13 @@ class ForumController extends Controller
         ->with('category_title', $category_title);
     }
 
+    public function delete($id)
+    {
+        
+        $post=Post::find($id);
+        $post->delete();
+
+        return redirect('/');
+    }
+
 }
