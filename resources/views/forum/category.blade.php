@@ -23,7 +23,7 @@
                     <span class="badge bg-info text-dark"><i class="fa-solid fa-comment-dots"></i></i>
                       {{App\Models\Reply::where('post_id', $post->id)->count()}}
                     </span>
-                    <span class="badge bg-danger"><i class="fa-solid fa-heart"></i> 3</span>
+                    <span class="badge bg-danger"><i class="fa-solid fa-heart"></i>{{App\Models\Reply::where('post_id', $post->id)->count()}}</span>
                     <br>
                     <small>{{$post->created_at}} | by SB Hero</small>
                 </li>

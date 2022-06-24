@@ -27,10 +27,15 @@
         </div>
         <div class="row my-3">
             <div class="col-12">
-                <div class="d-grid gap-2 col-3 mx-auto">
-                    <button class="btn btn-outline-danger fs-4"><i class="fa-solid fa-heart"></i> 3
-                    </button>
-                </div> 
+                <form method="POST" action="/heart">
+                    @csrf
+                    <input type="hidden" name="post_id" value="{{$post->id}}">
+                
+                    <div class="d-grid gap-2 col-3 mx-auto">
+                        <button type="submit" class="btn btn-outline-danger fs-4"><i class="fa-solid fa-heart"></i>{{App\Models\Heart::where('post_id', $post->id)->count();}}
+                        </button>
+                    </div> 
+                </form>
             </div>
         </div>
         <div class="row">
@@ -68,7 +73,7 @@
                 </div>
                 <div class="col-12 mt-3">
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <button class="btn btn-outline-primary" type="submit">Submit</button>
                     </div>
                 </div>
             </div>
